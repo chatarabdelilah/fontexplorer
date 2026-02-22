@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top bg-white border-bottom shadow-sm px-2 navbar-expand-sm navbar-light bg-light" th:fragment="header">
+<nav class="navbar fixed-top bg-white border-bottom shadow-sm px-2 navbar-expand-sm navbar-light" th:fragment="header">
     <a class="navbar-brand" th:href="@{/home}">
         <img class="navbar-logo" th:src="@{${currentUrl == '/home' ? '/icons/home.svg' : '/icons/person.svg'}}" alt="icon">
     </a>
@@ -11,6 +11,15 @@
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a th:class="${currentUrl == '/home' ? 'nav-link active' : 'nav-link'}" th:href="@{/home}">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a href="/albumdetails" th:class="${currentUrl == '/albumdetails' || currentUrl == '/albumlist' ? 'nav-link active dropdown-toggle' : 'nav-link dropdown-toggle'}" id="navbarDropdownAlbum" role="button" data-bs-toggle="dropdown" aria-expanded="false">Albums</a>
+
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownAlbum">
+                    <li><a th:class="${currentUrl == '/albumlist' ? 'active dropdown-item' : 'dropdown-item'}" th:href="@{/albumlist}">List</a></li>
+                    <li><a th:class="${currentUrl == '/albumdetails' ? 'active dropdown-item' : 'dropdown-item'}" th:href="@{/albumdetails}">Details</a></li>
+                </ul>
             </li>
 
             <li class="nav-item">
