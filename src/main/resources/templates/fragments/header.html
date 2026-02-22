@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top bg-white border-bottom shadow-sm px-2 navbar-expand-sm navbar-light bg-light" th:fragment="header">
     <a class="navbar-brand" th:href="@{/home}">
-        <img class="navbar-logo" th:src="@{/icons/home.svg}" alt="home_icon">
+        <img class="navbar-logo" th:src="@{${currentUrl == '/home' ? '/icons/home.svg' : '/icons/person.svg'}}" alt="icon">
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,6 +11,10 @@
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a th:class="${currentUrl == '/home' ? 'nav-link active' : 'nav-link'}" th:href="@{/home}">Home</a>
+            </li>
+
+            <li class="nav-item">
+                <a th:class="${currentUrl == '/about' ? 'nav-link active' : 'nav-link'}" th:href="@{/about}">About me</a>
             </li>
         </ul>
     </div>
