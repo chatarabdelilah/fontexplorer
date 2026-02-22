@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<head th:replace="~{fragments/headelement :: headerelement}"/>
+<body class="d-flex flex-column min-vh-100">
+<nav th:replace="~{fragments/header :: header}"/>
 
+<main class="container">
+    <h1>Client home</h1>
+</main>
+
+<footer th:replace="~{fragments/footer :: footer}"/>
 </body>
 </html>

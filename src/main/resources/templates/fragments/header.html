@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top bg-white border-bottom shadow-sm px-2 navbar-expand-sm navbar-light" th:fragment="header">
     <a class="navbar-brand" th:href="@{/home}">
-        <img class="navbar-logo" th:src="@{${currentUrl == '/home' ? '/icons/home.svg' : '/icons/person.svg'}}" alt="icon">
+        <img class="navbar-logo" th:src="@{${pageIcon}}" alt="page_icon">
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
