@@ -1,9 +1,8 @@
 package be.thomasmore.music.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Album {
@@ -15,7 +14,8 @@ public class Album {
     private String genre;
     private String artist;
     private String cover;
-    //private Song[] songs;
+    @OneToMany(mappedBy = "album")
+    private List<Song> songs;
     private int likes;
     private int saved;
     private int played;

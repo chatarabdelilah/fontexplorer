@@ -1,9 +1,6 @@
 package be.thomasmore.music.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Song {
@@ -13,4 +10,7 @@ public class Song {
 
     private String title;
     private int duration;
+    @ManyToOne
+    @JoinColumn(name = "album_id")
+    private Album album;
 }

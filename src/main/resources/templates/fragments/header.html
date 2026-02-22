@@ -22,6 +22,15 @@
                 </ul>
             </li>
 
+            <li class="nav-item dropdown">
+                <a href="/clienthome" th:class="${currentUrl == '/clienthome' || currentUrl == '/clientdetails' ? 'nav-link active dropdown-toggle' : 'nav-link dropdown-toggle'}" id="navbarDropdownClient" role="button" data-bs-toggle="dropdown" aria-expanded="false">Clients</a>
+
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownClient">
+                    <li><a th:class="${currentUrl == '/clienthome' ? 'active dropdown-item' : 'dropdown-item'}" th:href="@{/clienthome}">Home</a></li>
+                    <li><a th:class="${currentUrl == '/clientdetails' ? 'active dropdown-item' : 'dropdown-item'}" th:href="@{/clientdetails}">Details</a></li>
+                </ul>
+            </li>
+
             <li class="nav-item">
                 <a th:class="${currentUrl == '/about' ? 'nav-link active' : 'nav-link'}" th:href="@{/about}">About me</a>
             </li>

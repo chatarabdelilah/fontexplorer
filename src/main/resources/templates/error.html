@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<head th:replace="~{fragments/headelement :: headerelement}"/>
+<body class="d-flex flex-column min-vh-100">
+    <nav th:replace="~{fragments/header :: header}"/>
 
+    <main class="container">
+        <div class="alert alert-danger d-flex align-items-center justify-content-center g-2" role="alert">
+            ERROR!
+        </div>
+
+        <div class="alert alert-info" role="alert">
+            Klik op het huis icoontje om terug te keren naar de home-pagina.
+        </div>
+    </main>
+
+    <footer th:replace="~{fragments/footer :: footer}"/>
 </body>
 </html>
