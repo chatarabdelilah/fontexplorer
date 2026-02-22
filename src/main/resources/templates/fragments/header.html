@@ -1,0 +1,17 @@
+<nav class="navbar fixed-top bg-white border-bottom shadow-sm px-2 navbar-expand-sm navbar-light bg-light" th:fragment="header">
+    <a class="navbar-brand" th:href="@{/home}">
+        <img class="navbar-logo" th:src="@{/icons/home.svg}" alt="home_icon">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a th:class="${currentUrl == '/home' ? 'nav-link active' : 'nav-link'}" th:href="@{/home}">Home</a>
+            </li>
+        </ul>
+    </div>
+</nav>
