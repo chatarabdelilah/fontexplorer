@@ -15,9 +15,6 @@
                 <div class="flex-grow-1">
                     <section class="d-flex align-items-center gap-2 mb-1">
                         <h2 class="fw-bold mb-0" th:text="*{name}"></h2>
-                        <span class="badge rounded-pill px-2 py-1"
-                              style="background-color:#2563eb;"
-                              th:text="*{license}"></span>
                     </section>
 
                     <p class="text-secondary mb-3"
@@ -26,6 +23,22 @@
                     <section class="d-flex gap-2 mb-4">
                         <button class="btn btn-primary btn-sm">Copy CSS</button>
                         <button class="btn btn-outline-secondary btn-sm">Download Family</button>
+                    </section>
+
+                    <section class="row g-2">
+                        <p class="col-6 col-md-3 text-secondary">Designer</p>
+
+                        <article class="col-6 col-md-3">
+                            <a class="text-primary text-decoration-none"
+                               th:href="@{/designer/{id}(id=*{designer?.id})}"
+                               th:text="*{designer?.name}"></a>
+                        </article>
+
+                        <p class="col-6 col-md-3 text-secondary">License</p>
+                        <p class="col-6 col-md-3 fw-bold" th:text="*{license}"></p>
+
+                        <p class="col-6 col-md-3 text-secondary">Available Styles</p>
+                        <p class="col-6 col-md-3 fw-bold">Bold, Italic, Regular</p>
                     </section>
                 </div>
             </div>
