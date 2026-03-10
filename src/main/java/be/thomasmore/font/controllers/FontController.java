@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Optional;
 
@@ -18,10 +19,17 @@ public class FontController {
     }
 
     @GetMapping("/fontlist")
-    public String fontList(Model model) {
-        final Iterable<Font> fontsFromDb = fontRepository.findAll();
+    public String fontList(Model model,
+                           @RequestParam(required = false) String name,
+                           @RequestParam(required = false) String category,
+                           @RequestParam(required = false) String license,
+                           @RequestParam(required = false) Integer yearFrom,
+                           @RequestParam(required = false) Integer yearTo,
+                           @RequestParam(required = false) Boolean archived
+                           ) {
+        final Iterable<Font> allFonts = fontRepository.findByFilter(name, category, license, yearFrom, yearTo, archived);
 
-        model.addAttribute("fonts", fontsFromDb);
+        model.addAttribute("fonts", allFonts);
 
         model.addAttribute("pageIcon", "/icons/type.svg");
 

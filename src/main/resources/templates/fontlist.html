@@ -5,7 +5,20 @@
     <nav th:replace="~{fragments/header :: header}"/>
 
     <main class="container py-5">
-        <h1 class="text-center mb-5">Font list</h1>
+        <div>
+            <h1 class="text-center mb-5">Font list</h1>
+            <button type="button" class="btn btn-primary mb-5" data-bs-toggle="modal" data-bs-target="#filter">filter</button>
+        </div>
+
+
+        <div class="modal fade" id="filter" tabindex="-1" aria-labelledby="filter" aria-hidden="true">
+            <div class="modal-dialog">
+                <form th:action="@{/fontlist}" method="get">
+                    <input type="text" name="name" th:value="${param.name}">
+                    <button type="submit">zoek</button>
+                </form>
+            </div>
+        </div>
 
         <section class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
             <article class="col" th:each="font: ${fonts}" th:object="${font}" style="width: 18rem;">
