@@ -14,6 +14,7 @@ public class Font {
     private String category;
     private int year;
     private String license;
+    private boolean archived;
 
     @ManyToOne
     private Designer designer;
@@ -52,6 +53,14 @@ public class Font {
 
     public void setLicense(String license) {
         this.license = license;
+    }
+
+    public boolean isArchived() {
+        return archived;
+    }
+
+    public void setArchived(boolean archived) {
+        this.archived = archived;
     }
 
     public Designer getDesigner() {

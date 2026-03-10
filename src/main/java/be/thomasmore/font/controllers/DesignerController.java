@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class DesignerController {
     @GetMapping("/designerlist")
     public String designerList(Model model) {
-        model.addAttribute("pageIcon", "/icons/person.svg");
+        model.addAttribute("pageIcon", "/icons/designers.svg");
 
         return "designerlist";
     }
 
     @GetMapping("/designerdetails")
     public String designerDetails(Model model) {
-        model.addAttribute("pageIcon", "/icons/person.svg");
+        model.addAttribute("pageIcon", "/icons/designers.svg");
 
         return "designerdetails";
     }
