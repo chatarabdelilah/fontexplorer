@@ -5,6 +5,9 @@ import be.thomasmore.font.repositories.FontRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.Optional;
 
 @Controller
 public class FontController {
@@ -25,8 +28,14 @@ public class FontController {
         return "fontlist";
     }
 
-    @GetMapping("/fontdetails")
-    public String fontDetails(Model model) {
+    @GetMapping({"/fontdetails/{id}", "/fontdetails"})
+    public String fontDetails(Model model, @PathVariable(required = false) Integer id) {
+        if (id == null) return "fontdetails";
+
+        Optional<Font> fontFromDb = fontRepository.findById(id);
+
+        fontFromDb.ifPresent(font -> model.addAttribute("font", font));
+
         model.addAttribute("pageIcon", "/icons/type.svg");
 
         return "fontdetails";
