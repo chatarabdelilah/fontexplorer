@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class FontController {
     @GetMapping("/fontlist")
     public String fontList(Model model) {
-        model.addAttribute("pageIcon", "/icons/disc.svg");
+        model.addAttribute("pageIcon", "/icons/type.svg");
 
         return "fontlist";
     }
 
     @GetMapping("/fontdetails")
     public String fontDetails(Model model) {
-        model.addAttribute("pageIcon", "/icons/disc.svg");
+        model.addAttribute("pageIcon", "/icons/type.svg");
 
         return "fontdetails";
     }

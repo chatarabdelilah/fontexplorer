@@ -14,11 +14,11 @@
             </li>
 
             <li class="nav-item dropdown">
-                <a href="/albumdetails" th:class="${currentUrl == '/albumdetails' || currentUrl == '/albumlist' ? 'nav-link active dropdown-toggle' : 'nav-link dropdown-toggle'}" id="navbarDropdownAlbum" role="button" data-bs-toggle="dropdown" aria-expanded="false">Albums</a>
+                <a href="/fontdetails" th:class="${currentUrl == '/fontdetails' || currentUrl == '/fontlist' ? 'nav-link active dropdown-toggle' : 'nav-link dropdown-toggle'}" id="navbarDropdownFont" role="button" data-bs-toggle="dropdown" aria-expanded="false">Fonts</a>
 
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownAlbum">
-                    <li><a th:class="${currentUrl == '/albumlist' ? 'active dropdown-item' : 'dropdown-item'}" th:href="@{/albumlist}">List</a></li>
-                    <li><a th:class="${currentUrl == '/albumdetails' ? 'active dropdown-item' : 'dropdown-item'}" th:href="@{/albumdetails}">Details</a></li>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownFont">
+                    <li><a th:class="${currentUrl == '/fontlist' ? 'active dropdown-item' : 'dropdown-item'}" th:href="@{/fontlist}">List</a></li>
+                    <li><a th:class="${currentUrl == '/fontdetails' ? 'active dropdown-item' : 'dropdown-item'}" th:href="@{/fontdetails.html}">Details</a></li>
                 </ul>
             </li>
 
