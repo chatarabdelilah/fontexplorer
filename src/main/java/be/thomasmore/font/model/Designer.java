@@ -1,19 +1,24 @@
-package be.thomasmore.music.model;
+package be.thomasmore.font.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-import java.util.List;
+import java.util.Collection;
 
 @Entity
-public class Client {
+public class Designer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String name;
     private String email;
+    private String bio;
     private String country;
     private String city;
+    private Collection<Font> fonts;
 
     public Integer getId() {
         return id;
@@ -35,6 +40,14 @@ public class Client {
         this.email = email;
     }
 
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
     public String getCountry() {
         return country;
     }
@@ -49,5 +62,13 @@ public class Client {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public Collection<Font> getFonts() {
+        return fonts;
+    }
+
+    public void setFonts(Collection<Font> fonts) {
+        this.fonts = fonts;
     }
 }

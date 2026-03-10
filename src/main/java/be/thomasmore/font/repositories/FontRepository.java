@@ -1,6 +1,6 @@
-package be.thomasmore.music.repositories;
+package be.thomasmore.font.repositories;
 
-import be.thomasmore.music.model.Font;
+import be.thomasmore.font.model.Font;
 import org.springframework.data.repository.CrudRepository;
 
 public interface FontRepository extends CrudRepository<Font, Integer> {

@@ -1,4 +1,4 @@
-package be.thomasmore.music.controllers;
+package be.thomasmore.font.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

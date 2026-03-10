@@ -1,4 +1,4 @@
-package be.thomasmore.music.config;
+package be.thomasmore.font.config;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.ControllerAdvice;
