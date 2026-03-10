@@ -37,7 +37,8 @@
                         </article>
 
                         <p class="col-6 col-md-3 text-secondary">License</p>
-                        <p class="col-6 col-md-3 fw-bold" th:text="*{license}"></p>
+                        <p class="col-6 col-md-3 fw-bold" th:text="*{license}" th:if="*{license}"></p>
+                        <p class="col-6 col-md-3 fw-bold" th:text="|No license|" th:unless="*{license}"></p>
 
                         <p class="col-6 col-md-3 text-secondary">Available Styles</p>
                         <p class="col-6 col-md-3 fw-bold">Bold, Italic, Regular</p>
