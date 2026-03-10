@@ -14,7 +14,7 @@
             </li>
 
             <li class="nav-item dropdown">
-                <a th:href="@{/fontdetails}" th:class="${currentUrl == '/fontdetails' || currentUrl == '/fontlist' ? 'nav-link active dropdown-toggle' : 'nav-link dropdown-toggle'}" id="navbarDropdownFont" role="button" data-bs-toggle="dropdown" aria-expanded="false">Fonts</a>
+                <a th:href="@{/fontlist}" th:class="${currentUrl == '/fontdetails' || currentUrl == '/fontlist' ? 'nav-link active dropdown-toggle' : 'nav-link dropdown-toggle'}" id="navbarDropdownFont" role="button" data-bs-toggle="dropdown" aria-expanded="false">Fonts</a>
 
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownFont">
                     <li><a th:class="${currentUrl == '/fontlist' ? 'active dropdown-item' : 'dropdown-item'}" th:href="@{/fontlist}">List</a></li>

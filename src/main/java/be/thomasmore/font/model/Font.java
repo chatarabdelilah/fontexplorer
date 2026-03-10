@@ -12,9 +12,11 @@ public class Font {
 
     private String name;
     private String category;
-    private int year;
     private String license;
     private boolean archived;
+
+    @Column(name = "release_year")
+    private int year;
 
     @ManyToOne
     private Designer designer;

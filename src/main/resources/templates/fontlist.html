@@ -4,8 +4,19 @@
 <body class="d-flex flex-column min-vh-100">
     <nav th:replace="~{fragments/header :: header}"/>
 
-    <main class="container">
+    <main class="container-fluid text-center">
         <h1>Font list</h1>
+
+        <section class="container d-flex justify-content-center mt-5">
+            <div class="card" th:each="font: ${fonts}" th:object="${font}" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer th:replace="~{fragments/footer :: footer}"/>

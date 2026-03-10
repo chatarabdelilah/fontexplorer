@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.util.Collection;
 
 @Entity
+@Table(name = "app_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +21,12 @@ public class User {
 
     @ManyToMany
     private Collection<Font> favoriteFonts;
+
+    @ManyToMany
+    @JoinTable(name = "user_font_collections",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "font_id")
+    )
     private Collection<Font> fontCollections;
 
     public Integer getId() {

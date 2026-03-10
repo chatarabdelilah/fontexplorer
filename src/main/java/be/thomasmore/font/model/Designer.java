@@ -1,9 +1,6 @@
 package be.thomasmore.font.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Collection;
 
@@ -18,6 +15,8 @@ public class Designer {
     private String bio;
     private String country;
     private String city;
+
+    @OneToMany(mappedBy = "designer")
     private Collection<Font> fonts;
 
     public Integer getId() {
