@@ -32,9 +32,20 @@ public class FontController {
     public String fontDetails(Model model, @PathVariable(required = false) Integer id) {
         if (id == null) return "fontdetails";
 
+        long count = fontRepository.count();
+        long prevId = id > 1 ? id - 1 : count;
+        long nextId = id < count ? id + 1 : 1;
+
         Optional<Font> fontFromDb = fontRepository.findById(id);
+        Optional<Font> prevFontFromDb = fontRepository.findById((int) prevId);
+        Optional<Font> nextFontFromDb = fontRepository.findById((int) nextId);
 
         fontFromDb.ifPresent(font -> model.addAttribute("font", font));
+        prevFontFromDb.ifPresent(font -> model.addAttribute("prevFont", font));
+        nextFontFromDb.ifPresent(font -> model.addAttribute("nextFont", font));
+
+        model.addAttribute("prevId", prevId);
+        model.addAttribute("nextId", nextId);
 
         model.addAttribute("pageIcon", "/icons/type.svg");
 
