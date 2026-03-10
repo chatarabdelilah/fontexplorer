@@ -5,18 +5,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class AlbumController {
-    @GetMapping("/albumlist")
-    public String albumList(Model model) {
+public class FontController {
+    @GetMapping("/fontlist")
+    public String fontList(Model model) {
         model.addAttribute("pageIcon", "/icons/disc.svg");
 
-        return "albumlist";
+        return "fontlist";
     }
 
-    @GetMapping("/albumdetails")
-    public String albumDetails(Model model) {
+    @GetMapping("/fontdetails")
+    public String fontDetails(Model model) {
         model.addAttribute("pageIcon", "/icons/disc.svg");
 
-        return "albumdetails";
+        return "fontdetails";
     }
 }

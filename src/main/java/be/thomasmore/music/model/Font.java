@@ -2,15 +2,15 @@ package be.thomasmore.music.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
-public class Song {
+public class Font {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String title;
-    private int duration;
-    @ManyToOne
-    @JoinColumn(name = "album_id")
-    private Album album;
+    public Integer getId() {
+        return id;
+    }
 }

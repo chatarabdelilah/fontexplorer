@@ -1,9 +1,6 @@
 package be.thomasmore.music.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.List;
 
@@ -17,8 +14,6 @@ public class Client {
     private String email;
     private String country;
     private String city;
-    private List<Album> albums;
-    private int totalPlayed;
 
     public Integer getId() {
         return id;
@@ -54,21 +49,5 @@ public class Client {
 
     public void setCity(String city) {
         this.city = city;
-    }
-
-    public List<Album> getAlbums() {
-        return albums;
-    }
-
-    public void setAlbums(List<Album> albums) {
-        this.albums = albums;
-    }
-
-    public int getTotalPlayed() {
-        return totalPlayed;
-    }
-
-    public void setTotalPlayed(int totalPlayed) {
-        this.totalPlayed = totalPlayed;
     }
 }
