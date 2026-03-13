@@ -27,17 +27,19 @@ public class FontController {
                            @RequestParam(required = false) Integer yearTo,
                            @RequestParam(required = false) Boolean archived
                            ) {
+        model.addAttribute("pageIcon", "/icons/type.svg");
+
         final Iterable<Font> allFonts = fontRepository.findByFilter(name, category, license, yearFrom, yearTo, archived);
 
         model.addAttribute("fonts", allFonts);
-
-        model.addAttribute("pageIcon", "/icons/type.svg");
 
         return "fontlist";
     }
 
     @GetMapping({"/fontdetails/{id}", "/fontdetails"})
     public String fontDetails(Model model, @PathVariable(required = false) Integer id) {
+        model.addAttribute("pageIcon", "/icons/type.svg");
+
         if (id == null) return "fontdetails";
 
         long count = fontRepository.count();
@@ -54,8 +56,6 @@ public class FontController {
 
         model.addAttribute("prevId", prevId);
         model.addAttribute("nextId", nextId);
-
-        model.addAttribute("pageIcon", "/icons/type.svg");
 
         return "fontdetails";
     }

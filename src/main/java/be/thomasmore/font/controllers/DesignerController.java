@@ -28,6 +28,8 @@ public class DesignerController {
 
     @GetMapping({"/designerdetails/{id}", "/designerdetails"})
     public String designerDetails(Model model, @PathVariable(required = false) Integer id) {
+        model.addAttribute("pageIcon", "/icons/designers.svg");
+
         if (id == null) return "designerdetails";
 
         long count = designerRepository.count();
@@ -44,8 +46,6 @@ public class DesignerController {
 
         model.addAttribute("prevId", prevId);
         model.addAttribute("nextId", nextId);
-
-        model.addAttribute("pageIcon", "/icons/designers.svg");
 
         return "designerdetails";
     }

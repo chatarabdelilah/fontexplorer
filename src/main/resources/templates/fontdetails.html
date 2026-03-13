@@ -4,7 +4,7 @@
 <body class="d-flex flex-column min-vh-100">
     <nav th:replace="~{fragments/header :: header}"/>
 
-    <main class="container py-4" th:object="${font}">
+    <main class="container py-4" th:object="${font}" th:if="${font}">
         <section class="rounded-4 p-4 mb-4">
             <div class="d-flex gap-4">
                 <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
@@ -70,6 +70,8 @@
             </section>
         </section>
     </main>
+
+    <h1 class="text-center" th:unless="${font}">Geen font gevonden</h1>
 
     <footer th:replace="~{fragments/footer :: footer}"/>
 </body>
