@@ -1,11 +1,18 @@
 package be.thomasmore.font.controllers.admin;
 
+import be.thomasmore.font.model.Designer;
+import be.thomasmore.font.model.Font;
 import be.thomasmore.font.repositories.DesignerRepository;
 import be.thomasmore.font.repositories.FontRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/admin")
@@ -18,5 +25,22 @@ public class FontAdminController {
     public FontAdminController(FontRepository fontRepository, DesignerRepository designerRepository) {
         this.fontRepository = fontRepository;
         this.designerRepository = designerRepository;
+    }
+
+    @GetMapping("/fontedit/{id}")
+    public String fontEdit(Model model, @PathVariable Integer id) {
+        if (id == null) return "admin/fontedit";
+
+        logger.info("Font edit page for font with id: " + id);
+
+        Optional<Font> fontFromDb = fontRepository.findById(id);
+        Iterable<Designer> designersFromDb = designerRepository.findAll();
+
+        fontFromDb.ifPresent(font -> {
+            model.addAttribute("font", font);
+            model.addAttribute("designers", designersFromDb);
+        });
+
+        return "admin/fontedit";
     }
 }
