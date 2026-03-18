@@ -10,6 +10,15 @@
 
             <h1 th:text="|Pas '*{name}' aan|"></h1>
         </section>
+
+        <form th:action="@{/admin/fontedit}" th:object="${font}" method="post" id="fontForm">
+            <section class="card">
+                <article>
+                    <img alt="info_icon" th:src="@{/icons/info.svg}">
+                    <h4>Font details</h4>
+                </article>
+            </section>
+        </form>
     </main>
 
     <footer th:replace="~{fragments/footer :: footer}"/>
