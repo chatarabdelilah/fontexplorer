@@ -41,6 +41,8 @@ public class FontAdminController {
             model.addAttribute("designers", designersFromDb);
         });
 
+        model.addAttribute("pageIcon", "/icons/edit.svg");
+
         return "admin/fontedit";
     }
 }
