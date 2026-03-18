@@ -17,6 +17,11 @@
                     <img alt="info_icon" th:src="@{/icons/info.svg}">
                     <h4>Font details</h4>
                 </article>
+
+                <article>
+                    <label class="form-label" for="name">Name</label>
+                    <input type="text" class="form-control" id="name" th:field="*{name}" placeholder="e.g. Helvetica Now">
+                </article>
             </section>
         </form>
     </main>
