@@ -22,6 +22,30 @@
                     <label class="form-label" for="name">Name</label>
                     <input type="text" class="form-control" id="name" th:field="*{name}" placeholder="e.g. Helvetica Now">
                 </article>
+
+                <article class="row g-3 mb-3">
+                    <div class="col-6">
+                        <label class="form-label" for="category">Category</label>
+                        <select class="form-select" id="category">
+                            <option value="Serif">Serif</option>
+                            <option value="Sans Serif">Sans Serif</option>
+                            <option value="Monospace">Monospace</option>
+                            <option value="Display">Display</option>
+                            <option value="Handwriting">Handwriting</option>
+                            <option value="Pixel">Pixel</option>
+                            <option value="Calligraphy">Calligraphy</option>
+                            <option value="Blackletter">Blackletter</option>
+                            <option value="Cursive">Cursive</option>
+                        </select>
+                    </div>
+
+                    <div class="col-6">
+                        <label class="form-label" for="designer">Designer</label>
+                        <select class="form-select" id="designer" name="designerId" th:field="*{designer}">
+                            <option th:each="designer: ${designers}" th:value="${designer.id}" th:text="${designer.name}"></option>
+                        </select>
+                    </div>
+                </article>
             </section>
         </form>
     </main>
