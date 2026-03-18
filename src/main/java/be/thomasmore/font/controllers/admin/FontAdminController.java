@@ -8,9 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -44,5 +42,27 @@ public class FontAdminController {
         model.addAttribute("pageIcon", "/icons/edit.svg");
 
         return "admin/fontedit";
+    }
+
+    @ModelAttribute("font")
+    public Font findFont(@PathVariable(required = false) Integer id) {
+        logger.info("FontAdminController findFont method called for id: " + id);
+
+        if (id == null) return new Font();
+
+        Optional<Font> fontFromDb = fontRepository.findById(id);
+
+        if (fontFromDb.isPresent()) return fontFromDb.get();
+
+        return null;
+    }
+
+    @PostMapping("/fontedit/{id}")
+    public String fontEditPost(Model model, @PathVariable Integer id, Font font) {
+        logger.info("Font edit post for font with id: " + id);
+
+        fontRepository.save(font);
+
+        return "redirect:/fontdetails/" + id;
     }
 }
