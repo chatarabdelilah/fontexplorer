@@ -12,13 +12,13 @@
         </section>
 
         <form th:action="@{/admin/fontedit}" th:object="${font}" method="post" id="fontForm">
-            <section class="card">
-                <article>
+            <section class="card p-4 my-3">
+                <article class="d-inline-flex justify-content-start align-items-center mb-3 gap-2">
                     <img alt="info_icon" th:src="@{/icons/info.svg}">
                     <h4>Font details</h4>
                 </article>
 
-                <article>
+                <article class="mb-3">
                     <label class="form-label" for="name">Name</label>
                     <input type="text" class="form-control" id="name" th:field="*{name}" placeholder="e.g. Helvetica Now">
                 </article>
