@@ -46,6 +46,18 @@
                         </select>
                     </div>
                 </article>
+
+                <article class="row g-3">
+                    <div class="col-6">
+                        <label class="form-label" for="year">Release Year</label>
+                        <input type="number" class="form-control" id="year" th:field="*{year}" placeholder="2026" min="1900" max="2100">
+                    </div>
+
+                    <div class="col-6">
+                        <label class="form-label" for="license">License Type</label>
+                        <input type="text" class="form-control" id="license" th:field="*{license}" placeholder="OFL, Commercial...">
+                    </div>
+                </article>
             </section>
         </form>
     </main>
