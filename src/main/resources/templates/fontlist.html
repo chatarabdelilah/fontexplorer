@@ -21,34 +21,35 @@
                         </section>
 
                         <section class="modal-body">
-                            <article>
+                            <article class="col-6 mb-3">
                                 <label for="name">Name</label>
-                                <input type="text" id="name" name="name" th:value="${param.name}">
+                                <input type="text" class="form-control" id="name" name="name" th:value="${param.name}">
                             </article>
 
-                            <article>
+                            <article class="col-6 mb-3">
                                 <label for="name">Category</label>
-                                <input type="text" name="category" th:value="${param.name}">
+                                <input type="text" class="form-control" name="category" th:value="${param.category}">
                             </article>
 
-                            <article>
+                            <article class="col-6 mb-3">
                                 <label for="name">License</label>
-                                <input type="text" name="license" th:value="${param.name}">
+                                <input type="text" class="form-control" name="license" th:value="${param.license}">
                             </article>
 
-                            <article class="col-12 p-1">
+                            <article class="col-12 mb-3">
                                 <label class="form-label">Minimum year</label>
-                                <div class="input-group">
-                                    <input th:value="${param.yearFrom}" type="number" aria-label="minimum capaciteit" name="minCapacity" step="50">
-                                </div>
+                                <input th:value="${param.yearFrom}" class="form-control" type="number" aria-label="minimum capaciteit" name="minCapacity" min="1900" max="2100" step="1">
 
                                 <label class="form-label">Maximum year</label>
-                                <div class="input-group">
-                                    <input th:value="${param.yearTo}" type="number" aria-label="maximum capaciteit" name="maxCapacity" step="50">
-                                </div>
+                                <input th:value="${param.yearTo}" class="form-control" type="number" aria-label="maximum capaciteit" name="maxCapacity" min="1900" max="2100" step="1">
                             </article>
 
-                            <button type="submit">Search</button>
+                            <article class="col-12 mb-3">
+                                <input type="checkbox" class="form-check-input" th:value="${param.archived}" name="archived" id="archived">
+                                <label class="form-label" for="archived">Archived</label>
+                            </article>
+
+                            <button type="submit" class="btn btn-primary">Search</button>
                         </section>
                     </form>
                 </div>
