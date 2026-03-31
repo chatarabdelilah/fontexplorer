@@ -12,8 +12,8 @@ public interface FontRepository extends CrudRepository<Font, Integer> {
     "(:name IS NULL OR LOWER(f.name) LIKE LOWER(CONCAT('%', :name, '%'))) AND " +
             "(:category IS NULL OR LOWER(f.category) LIKE LOWER(CONCAT('%', :category, '%'))) AND " +
             "(:license IS NULL OR LOWER(f.license) LIKE LOWER(CONCAT('%', :license, '%'))) AND " +
-            "(:yearFrom IS NULL OR f.year >= :yearFrom) AND " +
-            "(:yearTo IS NULL OR f.year <= :yearTo) AND " +
+            "(:yearFrom IS NULL OR f.releaseYear >= :yearFrom) AND " +
+            "(:yearTo IS NULL OR f.releaseYear <= :yearTo) AND " +
             "(:archived IS NULL OR f.archived = :archived)"
     )
     List<Font> findByFilter(@Param("name") String name,

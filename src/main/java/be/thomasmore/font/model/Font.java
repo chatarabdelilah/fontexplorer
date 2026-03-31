@@ -15,8 +15,7 @@ public class Font {
     private String license;
     private boolean archived;
 
-    @Column(name = "release_year")
-    private int year;
+    private int releaseYear;
 
     @ManyToOne
     private Designer designer;
@@ -41,12 +40,12 @@ public class Font {
         this.category = category;
     }
 
-    public int getYear() {
-        return year;
+    public int getReleaseYear() {
+        return releaseYear;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setReleaseYear(int releaseYear) {
+        this.releaseYear = releaseYear;
     }
 
     public String getLicense() {
