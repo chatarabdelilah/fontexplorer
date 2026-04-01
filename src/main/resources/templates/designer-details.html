@@ -4,8 +4,20 @@
 <body class="d-flex flex-column min-vh-100">
     <nav th:replace="~{fragments/header :: header}"/>
 
-    <main class="container">
+    <main class="container" th:object="${designer}">
         <h1>Designer details</h1>
+
+        <section class="card" style="width: 18rem;">
+            <article class="card-body">
+                <h5 class="card-title" th:text="*{name}"></h5>
+                <p class="card-text" th:text="*{bio}"></p>
+            </article>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" th:text="|E-mail: *{email}|"></li>
+                <li class="list-group-item" th:text="|Country & city: *{country}|"></li>
+            </ul>
+        </section>
     </main>
 
     <footer th:replace="~{fragments/footer :: footer}"/>
