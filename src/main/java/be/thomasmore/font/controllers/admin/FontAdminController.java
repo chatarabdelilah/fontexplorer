@@ -58,8 +58,13 @@ public class FontAdminController {
     }
 
     @PostMapping("/fontedit/{id}")
-    public String fontEditPost(@PathVariable Integer id, Font font) {
+    public String fontEditPost(@PathVariable Integer id, Font font, @RequestParam(required = false) Integer designerId) {
         logger.info("Font edit post for font with id: " + id);
+
+        if (designerId != null)
+        {
+            designerRepository.findById(designerId).ifPresent(font::setDesigner);
+        }
 
         fontRepository.save(font);
 

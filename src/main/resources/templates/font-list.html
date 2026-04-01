@@ -49,12 +49,12 @@
                             </article>
 
                             <article class="col-12 mb-3 form-check">
-                                <input type="radio" name="archived" value="false" id="archivedNo" th:checked="${param.archived == false}">
+                                <input type="radio" name="archived" value="false" id="archivedNo" th:checked="${param.archived == 'false'}">
                                 <label for="archivedNo">Actief</label>
                             </article>
 
                             <article class="col-12 mb-3 form-check">
-                                <input type="radio" name="archived" value="true" id="archivedYes" th:checked="${param.archived == true}">
+                                <input type="radio" name="archived" value="true" id="archivedYes" th:checked="${param.archived == 'true'}">
                                 <label for="archivedYes">Gearchiveerd</label>
                             </article>
 
