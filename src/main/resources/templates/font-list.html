@@ -44,9 +44,19 @@
                                 <input th:value="${param.yearTo}" class="form-control" type="number" aria-label="maximum capaciteit" name="yearTo" min="1900" max="2100" step="1">
                             </article>
 
-                            <article class="col-12 mb-3">
-                                <input type="checkbox" class="form-check-input" th:value="${param.archived}" name="archived" id="archived">
-                                <label class="form-label" for="archived">Archived</label>
+                            <article class="col-12 mb-3 form-check">
+                                <input type="radio" name="archived" value="" id="archivedAll" th:checked="${param.archived == null}">
+                                <label for="archivedAll">All</label>
+                            </article>
+
+                            <article class="col-12 mb-3 form-check">
+                                <input type="radio" name="archived" value="false" id="archivedNo" th:checked="${param.archived == false}">
+                                <label for="archivedNo">Actief</label>
+                            </article>
+
+                            <article class="col-12 mb-3 form-check">
+                                <input type="radio" name="archived" value="true" id="archivedYes" th:checked="${param.archived == true}">
+                                <label for="archivedYes">Gearchiveerd</label>
                             </article>
 
                             <button type="submit" class="btn btn-primary">Search</button>
