@@ -27,7 +27,7 @@ public class FontAdminController {
 
     @GetMapping("/fontedit/{id}")
     public String fontEdit(Model model, @PathVariable Integer id) {
-        if (id == null) return "admin/fontedit";
+        if (id == null) return "admin/font-edit";
 
         logger.info("Font edit page for font with id: " + id);
 
@@ -41,7 +41,7 @@ public class FontAdminController {
 
         model.addAttribute("pageIcon", "/icons/edit.svg");
 
-        return "admin/fontedit";
+        return "admin/font-edit";
     }
 
     @ModelAttribute("font")

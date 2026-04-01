@@ -1,9 +1,7 @@
 package be.thomasmore.font.controllers;
 
 import be.thomasmore.font.model.Designer;
-import be.thomasmore.font.model.Font;
 import be.thomasmore.font.repositories.DesignerRepository;
-import be.thomasmore.font.repositories.FontRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,14 +21,14 @@ public class DesignerController {
     public String designerList(Model model) {
         model.addAttribute("pageIcon", "/icons/designers.svg");
 
-        return "designerlist";
+        return "designer-list";
     }
 
     @GetMapping({"/designerdetails/{id}", "/designerdetails"})
     public String designerDetails(Model model, @PathVariable(required = false) Integer id) {
         model.addAttribute("pageIcon", "/icons/designers.svg");
 
-        if (id == null) return "designerdetails";
+        if (id == null) return "designer-details";
 
         long count = designerRepository.count();
         long prevId = id > 1 ? id - 1 : count;
@@ -47,6 +45,6 @@ public class DesignerController {
         model.addAttribute("prevId", prevId);
         model.addAttribute("nextId", nextId);
 
-        return "designerdetails";
+        return "designer-details";
     }
 }

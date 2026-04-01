@@ -33,14 +33,14 @@ public class FontController {
 
         model.addAttribute("fonts", allFonts);
 
-        return "fontlist";
+        return "font-list";
     }
 
     @GetMapping({"/fontdetails/{id}", "/fontdetails"})
     public String fontDetails(Model model, @PathVariable(required = false) Integer id) {
         model.addAttribute("pageIcon", "/icons/type.svg");
 
-        if (id == null) return "fontdetails";
+        if (id == null) return "font-details";
 
         long count = fontRepository.count();
         long prevId = id > 1 ? id - 1 : count;
@@ -57,6 +57,6 @@ public class FontController {
         model.addAttribute("prevId", prevId);
         model.addAttribute("nextId", nextId);
 
-        return "fontdetails";
+        return "font-details";
     }
 }
