@@ -70,4 +70,26 @@ public class FontAdminController {
 
         return "redirect:/fontdetails/" + id;
     }
+
+    @GetMapping("/fontnew")
+    public String fontNew(Model model) {
+        Iterable<Designer> designersFromDb = designerRepository.findAll();
+
+        model.addAttribute("designers", designersFromDb);
+        model.addAttribute("pageIcon", "/icons/file-plus.svg");
+
+        return "admin/font-new";
+    }
+
+    @PostMapping("/fontnew")
+    public String fontNewPost(Font font, @RequestParam(required = false) Integer designerId) {
+        if (designerId != null)
+        {
+            designerRepository.findById(designerId).ifPresent(font::setDesigner);
+        }
+
+        Font saved = fontRepository.save(font);
+
+        return "redirect:/fontdetails/" + saved.getId();
+    }
 }

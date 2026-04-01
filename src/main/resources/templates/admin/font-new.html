@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/headerelement :: headerelement}"/>
+<body class="d-flex flex-column min-vh-100">
+    <nav th:replace="~{fragments/header :: header}"/>
+
+    <main class="container" th:if="${font}" th:object="${font}">
+        <section class="d-flex justify-content-between align-items-center">
+            <a th:href="@{/fontlist}" class="btn btn-outline-light"><img th:src="@{/icons/list.svg}"></a>
+
+            <h1 th:text="|Voeg font toe|"></h1>
+        </section>
+
+        <form th:action="@{/admin/fontnew}" method="post">
+            <section class="card p-4 my-3">
+                <article class="d-inline-flex justify-content-start align-items-center mb-3 gap-2">
+                    <img alt="info_icon" th:src="@{/icons/info.svg}">
+                    <h4>Font details</h4>
+                </article>
+
+                <article class="mb-3">
+                    <label class="form-label" for="name">Name</label>
+                    <input type="text" class="form-control" required id="name" th:field="*{name}" placeholder="e.g. Helvetica Now">
+                </article>
+
+                <article class="row g-3 mb-3">
+                    <div class="col-6">
+                        <label class="form-label" for="category">Category</label>
+                        <select class="form-select" id="category" th:field="*{category}">
+                            <option value="Serif">Serif</option>
+                            <option value="Sans Serif">Sans Serif</option>
+                            <option value="Monospace">Monospace</option>
+                            <option value="Display">Display</option>
+                            <option value="Handwriting">Handwriting</option>
+                            <option value="Pixel">Pixel</option>
+                            <option value="Calligraphy">Calligraphy</option>
+                            <option value="Blackletter">Blackletter</option>
+                            <option value="Cursive">Cursive</option>
+                        </select>
+                    </div>
+
+                    <div class="col-6">
+                        <label class="form-label" for="designer">Designer</label>
+                        <select class="form-select" name="designerId" id="designer">
+                            <option th:each="d: ${designers}" th:value="${d.id}" th:text="${d.name}" th:selected="${font.designer != null and font.designer.id == d.id}"></option>
+                        </select>
+                    </div>
+                </article>
+
+                <article class="row g-3">
+                    <div class="col-6">
+                        <label class="form-label" for="releaseYear">Release Year</label>
+                        <input type="number" class="form-control" id="releaseYear" required th:field="*{releaseYear}" placeholder="2026" min="1900" max="2100">
+                    </div>
+
+                    <div class="col-6">
+                        <label class="form-label" for="license">License Type</label>
+                        <input type="text" class="form-control" id="license" required th:field="*{license}" placeholder="OFL, Commercial...">
+                    </div>
+                </article>
+            </section>
+
+            <section>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </section>
+        </form>
+    </main>
+
+    <footer th:replace="~{fragments/footer :: footer}"/>
+</body>
+</html>
