@@ -41,8 +41,8 @@
 
                     <div class="col-6">
                         <label class="form-label" for="designer">Designer</label>
-                        <select class="form-select" id="designer" th:field="*{designer}">
-                            <option th:each="designer: ${designers}" th:value="${designer.id}" th:text="${designer.name}"></option>
+                        <select class="form-select" name="designerId" id="designer">
+                            <option th:each="d: ${designers}" th:value="${d.id}" th:text="${d.name}" th:selected="${font.designer != null and font.designer.id == d.id}"></option>
                         </select>
                     </div>
                 </article>

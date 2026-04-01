@@ -58,7 +58,7 @@ public class FontAdminController {
     }
 
     @PostMapping("/fontedit/{id}")
-    public String fontEditPost(Model model, @PathVariable Integer id, Font font) {
+    public String fontEditPost(@PathVariable Integer id, Font font) {
         logger.info("Font edit post for font with id: " + id);
 
         fontRepository.save(font);
