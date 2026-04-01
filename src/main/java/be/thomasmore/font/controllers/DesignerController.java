@@ -20,6 +20,7 @@ public class DesignerController {
     @GetMapping("/designerlist")
     public String designerList(Model model) {
         model.addAttribute("pageIcon", "/icons/designers.svg");
+        model.addAttribute("designers", designerRepository.findAll());
 
         return "designer-list";
     }
