@@ -175,6 +175,10 @@ Categorie, stijlen, tekensystemen -> weglaten op dit niveau, zijn extras.
 
 ### Wireframes
 
+<img width="1058" height="685" alt="image" src="https://github.com/user-attachments/assets/35b369e2-452b-429e-9eb8-6ef502fc940f" />
+
+***Home pagina***
+
 ### Use case diagram
 
 ### Activity diagram
