@@ -179,6 +179,9 @@ Categorie, stijlen, tekensystemen -> weglaten op dit niveau, zijn extras.
 
 ***Home pagina***
 
+<img width="1097" height="704" alt="image" src="https://github.com/user-attachments/assets/a134ab4a-5c0a-4f14-9f37-b1d175a27344" />
+
+*** Font list pagina***
 ### Use case diagram
 
 ### Activity diagram
