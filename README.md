@@ -16,7 +16,7 @@ Fonts voor developers en designers die geinteresseerd zijn in typografie. Om het
    - List pagina toont alle niet-gearchiveerde fonts.
    - Elk font toont naam en categorie.
    - De pagina is bereikbaar zonder in te loggen.
-   - lk font heeft een link naar detail pagina.
+   - Elk font heeft een link naar detail pagina.
    - Geen fonts = melding
 2. Als bezoeker wil ik detail pagina zien van een font.
    - Detail pagina toont naam, categorie, designer, jaar, licentie en stijlen.
