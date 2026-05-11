@@ -4,7 +4,7 @@
 <body class="d-flex flex-column min-vh-100">
     <nav th:replace="~{fragments/header :: header}"/>
 
-    <main class="container d-flex flex-column justify-content-center align-items-center py-5" th:object="${designer}">
+    <main class="container d-flex flex-column justify-content-center align-items-center py-5" th:object="${designer}" th:if="${designer}">
         <h1>Designer details</h1>
 
         <section class="card mt-5" style="width: 18rem;">
