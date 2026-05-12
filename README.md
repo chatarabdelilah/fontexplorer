@@ -182,6 +182,10 @@ Categorie, stijlen, tekensystemen -> weglaten op dit niveau, zijn extras.
 <img width="1063" height="682" alt="image" src="https://github.com/user-attachments/assets/5ed12015-665a-4e15-8210-1628cd7357d5" />
 
 ***Font list pagina***
+
+<img width="1051" height="674" alt="image" src="https://github.com/user-attachments/assets/df93b258-e8ed-4f67-9338-dd245fde325c" />
+
+***Font detail pagina***
 ### Use case diagram
 
 ### Activity diagram
