@@ -180,6 +180,10 @@ Categorie, stijlen, tekensystemen -> weglaten op dit niveau, zijn extras.
 ***Font list pagina***
 > Lijst pagina van alle fonts. Toont een preview en categorie. Bevat een knop dat doorverwijst naar de detail pagina van geselecteerde font. Admin ziet een New-knop voor nieuwe fonts te voegen.
 
+<br/>
+<br/>
+<br/>
+
 <img width="1036" height="674" alt="image" src="https://github.com/user-attachments/assets/3c3a8be3-8047-4521-96db-f5dc04d7798a" />
 
 ***Font detail pagina***
