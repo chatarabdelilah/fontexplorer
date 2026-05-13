@@ -175,10 +175,6 @@ Categorie, stijlen, tekensystemen -> weglaten op dit niveau, zijn extras.
 
 ### Wireframes
 
-<img width="1058" height="685" alt="image" src="https://github.com/user-attachments/assets/35b369e2-452b-429e-9eb8-6ef502fc940f" />
-
-***Home pagina***
-
 <img width="1063" height="682" alt="image" src="https://github.com/user-attachments/assets/5ed12015-665a-4e15-8210-1628cd7357d5" />
 
 ***Font list pagina***
