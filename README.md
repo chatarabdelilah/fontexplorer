@@ -128,17 +128,17 @@ Categorie, stijlen, tekensystemen -> weglaten op dit niveau, zijn extras.
 
 ### Wireframes
 
-<img width="1041" height="676" alt="image" src="https://github.com/user-attachments/assets/f775bbd9-c748-458f-814d-c7d3e08629a0" />
-
 ***Font list pagina***
 > Lijst pagina van alle fonts. Toont een preview en categorie. Bevat een knop dat doorverwijst naar de detail pagina van geselecteerde font. Admin ziet een New-knop voor nieuwe fonts te voegen.
 
-<img width="1036" height="674" alt="image" src="https://github.com/user-attachments/assets/3c3a8be3-8047-4521-96db-f5dc04d7798a" />
+<img width="1041" height="676" alt="image" src="https://github.com/user-attachments/assets/f775bbd9-c748-458f-814d-c7d3e08629a0" />
 
 ---
 
 ***Font details pagina***
 > Detail pagina van een font. Toont alle eigenschappen: naam, categorie, jaar, designer (klikbaar, verwijst door naar detail pagina van gekoppelde designer), licentie en stijlen. Bevat navigatie knoppen naar vorige en volgende font. Admin ziet een Edit-knop voor een font aan te passen.
+
+<img width="1036" height="674" alt="image" src="https://github.com/user-attachments/assets/3c3a8be3-8047-4521-96db-f5dc04d7798a" />
 
 ---
 
@@ -147,6 +147,8 @@ Categorie, stijlen, tekensystemen -> weglaten op dit niveau, zijn extras.
 ---
 
 ### Activity diagram
+
+<img width="850" height="1243" alt="image" src="https://github.com/user-attachments/assets/2e504561-da5a-4ef3-836b-980c87de1976" />
 
 ---
 
