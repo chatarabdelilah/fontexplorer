@@ -169,7 +169,7 @@ Categorie, stijlen, tekensystemen -> weglaten op dit niveau, zijn extras.
 
 ### Stap 4 - Visualisatie
 
-<img width="314" height="388" alt="image" src="https://github.com/user-attachments/assets/77b4534f-9c0b-4d64-a60c-b4b54bd4a7ec" />
+<img width="962" height="591" alt="image" src="https://github.com/user-attachments/assets/6022f895-4caf-47af-8b9d-eea3bd164576" />
 
 ## Functionele analyse
 
