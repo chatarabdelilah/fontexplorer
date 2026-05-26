@@ -143,6 +143,15 @@ Categorie, stijlen, tekensystemen -> weglaten op dit niveau, zijn extras.
 ---
 
 ### Use case diagram
+> Use case diagram voor fonts te ontdekken.
+
+<img width="513" height="562" alt="image" src="https://github.com/user-attachments/assets/cd2879c3-835c-4123-8e49-e17342b9aa47" />
+
+---
+
+> Use case digram voor fonts te beheren
+
+<img width="512" height="558" alt="image" src="https://github.com/user-attachments/assets/1f1cc41d-9a3b-499a-aa13-c06b2c7d65e4" />
 
 ---
 
