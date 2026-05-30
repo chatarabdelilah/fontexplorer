@@ -18,15 +18,8 @@ public class AppUser {
     private String city;
     private boolean loggedIn;
 
-    @ManyToMany
-    private Collection<Font> favoriteFonts;
-
-    @ManyToMany
-    @JoinTable(name = "user_font_collections",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "font_id")
-    )
-    private Collection<Font> fontCollections;
+    @OneToMany
+    private Collection<FontCollection> fontCollections;
 
     public Integer getId() {
         return id;
@@ -88,19 +81,11 @@ public class AppUser {
         this.loggedIn = loggedIn;
     }
 
-    public Collection<Font> getFavoriteFonts() {
-        return favoriteFonts;
-    }
-
-    public void setFavoriteFonts(Collection<Font> favoriteFonts) {
-        this.favoriteFonts = favoriteFonts;
-    }
-
-    public Collection<Font> getFontCollections() {
+    public Collection<FontCollection> getFontCollections() {
         return fontCollections;
     }
 
-    public void setFontCollections(Collection<Font> fontCollections) {
+    public void setFontCollections(Collection<FontCollection> fontCollections) {
         this.fontCollections = fontCollections;
     }
 }
