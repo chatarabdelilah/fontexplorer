@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head th:replace="~{fragments/headerelement :: headerelement}"/>
+    <body class="d-flex flex-column min-vh-100">
+        <nav th:replace="~{fragments/header :: header}"/>
+
+        <main class="container d-flex flex-column justify-content-center align-items-center py-5" th:object="${fontCollection}" th:if="${fontCollection}">
+            <h1>Font collection details</h1>
+
+            <section class="card mt-5" style="width: 18rem;">
+                <article class="card-body">
+                    <h5 class="card-title" th:text="*{name}"></h5>
+                    <p class="card-text" th:text="*{description}"></p>
+                </article>
+            </section>
+
+            <div class="border-top my-3" style="border-color:#2a2d3a;"></div>
+
+            <section class="d-flex justify-content-between gap-3">
+                <a th:href="@{/fontcollectiondetails/{id}(id=${prevId})}"
+                   class="btn active rounded-pill px-4 py-2 text-decoration-none d-flex align-items-center gap-3">
+                    <span class="fs-5">&lsaquo;</span>
+                    <article class="text-start">
+                        <div class="fw-semibold" th:text="${prevFontCollection.name}"></div>
+                    </article>
+                </a>
+
+                <a th:href="@{/fontcollectiondetails/{id}(id=${nextId})}"
+                   class="btn active rounded-pill px-4 py-2 text-decoration-none d-flex align-items-center gap-3">
+                    <article class="text-end">
+                        <div class="fw-semibold" th:text="${nextFontCollection.name}"></div>
+                    </article>
+                    <span class="fs-5">&rsaquo;</span>
+                </a>
+            </section>
+        </main>
+
+        <h1 class="text-center" th:unless="${fontCollection}">Geen font collection gevonden</h1>
+
+        <footer th:replace="~{fragments/footer :: footer}"/>
+    </body>
+</html>

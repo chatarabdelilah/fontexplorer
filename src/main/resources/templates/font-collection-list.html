@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head th:replace="~{fragments/headerelement :: headerelement}"/>
+    <body class="d-flex flex-column min-vh-100">
+        <nav th:replace="~{fragments/header :: header}"/>
+
+        <main class="container py-5">
+            <div>
+                <h1 class="text-center mb-5">Font Collection List</h1>
+            </div>
+
+            <section class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+                <article class="col" th:each="fontcollection: ${fontCollections}" th:object="${fontcollection}" style="width: 18rem;">
+                    <div class="card h-100 border-1 rounder-4">
+                        <div class="card-img-top d-flex align-items-center justify-content-center rounded-top-4"
+                             style="height: 160px;">
+                            <span class="text-center fs-1" th:text="*{name}"></span>
+                        </div>
+
+                        <div class="card-body d-flex justify-content-between align-items-center px-3 py-3">
+                            <div>
+                                <h6 class="card-title text-white fw-bold mb-1" th:text="*{name}"></h6>
+                                <small class="text-secondary" th:text="|*{description}|"></small>
+                            </div>
+
+                            <a th:href="@{/fontcollectiondetails/{id}(id=*{id})}"
+                               class="btn btn-sm btn-primary rounded-circle d-flex align-items-center justify-content-center"
+                               style="width: 36px; height: 36px"
+                            >
+                                &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <h1 class="text-center" th:unless="${fontCollections}">Geen collections gevonden</h1>
+
+        <footer th:replace="~{fragments/footer :: footer}"/>
+    </body>
+</html>
