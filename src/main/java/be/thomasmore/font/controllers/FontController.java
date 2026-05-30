@@ -27,7 +27,7 @@ public class FontController {
                            @RequestParam(required = false) Integer yearTo,
                            @RequestParam(required = false) Boolean archived
                            ) {
-        model.addAttribute("pageIcon", "/icons/type.svg");
+        model.addAttribute("pageIcon", "/icons/list.svg");
 
         final Iterable<Font> allFonts = fontRepository.findByFilter(name, category, license, yearFrom, yearTo, archived);
 

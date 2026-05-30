@@ -19,7 +19,7 @@ public class DesignerController {
 
     @GetMapping("/designerlist")
     public String designerList(Model model) {
-        model.addAttribute("pageIcon", "/icons/designers.svg");
+        model.addAttribute("pageIcon", "/icons/list.svg");
         model.addAttribute("designers", designerRepository.findAll());
 
         return "designer-list";
@@ -27,7 +27,7 @@ public class DesignerController {
 
     @GetMapping({"/designerdetails/{id}", "/designerdetails"})
     public String designerDetails(Model model, @PathVariable(required = false) Integer id) {
-        model.addAttribute("pageIcon", "/icons/designers.svg");
+        model.addAttribute("pageIcon", "/icons/person.svg");
 
         if (id == null) return "designer-details";
 

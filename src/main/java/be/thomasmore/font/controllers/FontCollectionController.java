@@ -21,7 +21,7 @@ public class FontCollectionController {
 
     @GetMapping("/fontcollectionlist")
     public String fontCollectionList(Model model) {
-        model.addAttribute("pageIcon", "/icons/designers.svg");
+        model.addAttribute("pageIcon", "/icons/list.svg");
         model.addAttribute("fontCollections", fontCollectionRepository.findAll());
 
         return "font-collection-list";
@@ -29,7 +29,7 @@ public class FontCollectionController {
 
     @GetMapping({"/fontcollectiondetails/{id}", "/fontcollectiondetails"})
     public String fontCollecitonDetails(Model model, @PathVariable(required = false) Integer id) {
-        model.addAttribute("pageIcon", "/icons/designers.svg");
+        model.addAttribute("pageIcon", "/icons/italic.svg");
 
         if (id == null) return "font-collection-details";
 
