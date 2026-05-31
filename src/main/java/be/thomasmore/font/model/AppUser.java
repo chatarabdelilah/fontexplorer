@@ -18,7 +18,7 @@ public class AppUser {
     private String city;
     private boolean loggedIn;
 
-    @OneToMany
+    @OneToMany(mappedBy = "owner")
     private Collection<FontCollection> fontCollections;
 
     public Integer getId() {
