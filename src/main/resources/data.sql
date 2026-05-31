@@ -22,3 +22,22 @@ INSERT INTO FONT (name, category, license, archived, release_year, designer_id) 
 INSERT INTO FONT (name, category, license, archived, release_year, designer_id) VALUES ('Avenue Sans', 'Serif', 'SIL Open Font License', false, 2008, 3);
 INSERT INTO FONT (name, category, license, archived, release_year, designer_id) VALUES ('Calyx Display', 'Cursive', 'SIL Open Font License', false, 2021, 4);
 INSERT INTO FONT (name, category, license, archived, release_year, designer_id) VALUES ('Sodo Sans', 'Sans Serif', null, true, 2005, 5);
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- APP USERS
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO APP_USER
+(name, email, occupation, bio, country, city, logged_in)
+VALUES
+    ('Abdelilah', 'chatar.abdelilah.s@gmail.com', 'Student', 'IT Student', 'Belgium', 'Antwerp', TRUE);
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- FONT COLLECTIONS
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO FONT_COLLECTION (name, description, owner_id) VALUES ('Web Project Fonts', 'Fonts voor een web project', 1);
+INSERT INTO FONT_COLLECTION (name, description, owner_id) VALUES ('Blog Fonts', 'Fonts voor een blog', 1);
+INSERT INTO FONT_COLLECTION (name, description, owner_id) VALUES ('Programming Fonts', 'Fonts voor visual studio code', 1);
+INSERT INTO FONT_COLLECTION (name, description, owner_id) VALUES ('Game Fonts', 'Fonts voor een game', 1);
+INSERT INTO FONT_COLLECTION (name, description, owner_id) VALUES ('Favorite fonts', 'Mijn favoriete fonts in 1', 1);
