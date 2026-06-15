@@ -41,3 +41,5 @@ INSERT INTO FONT_COLLECTION (name, description, owner_id) VALUES ('Blog Fonts', 
 INSERT INTO FONT_COLLECTION (name, description, owner_id) VALUES ('Programming Fonts', 'Fonts voor visual studio code', 1);
 INSERT INTO FONT_COLLECTION (name, description, owner_id) VALUES ('Game Fonts', 'Fonts voor een game', 1);
 INSERT INTO FONT_COLLECTION (name, description, owner_id) VALUES ('Favorite fonts', 'Mijn favoriete fonts in 1', 1);
+
+INSERT INTO FONT_COLLECTION_FONTS (font_collection_id, fonts_id) VALUES (1, 1), (2, 2), (3, 3), (1, 4)
