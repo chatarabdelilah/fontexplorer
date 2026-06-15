@@ -5,13 +5,20 @@
         <nav th:replace="~{fragments/header :: header}"/>
 
         <main class="container d-flex flex-column justify-content-center align-items-center py-5" th:object="${fontCollection}" th:if="${fontCollection}">
-            <h1>Font collection details</h1>
+            <div>
+                <h1 class="text-center">Font collection details</h1>
+            </div>
 
             <section class="card mt-5" style="width: 18rem;">
-                <article class="card-body">
+                <article class="card-body mb-2">
                     <h5 class="card-title" th:text="*{name}"></h5>
                     <p class="card-text" th:text="*{description}"></p>
+
+                    <ul class="list-group mb-2" th:each="font: *{fonts}">
+                        <li class="list-group-item"><a class="text-primary text-decoration-none" th:href="@{/fontdetails/{id}(id=${font.id})}" th:text="${font.name}"></a></li>
+                    </ul>
                 </article>
+                <a class="btn btn-primary btn-sm" th:href="@{|/admin/fontcollectionedit/*{id}|}">Edit</a>
             </section>
 
             <div class="border-top my-3" style="border-color:#2a2d3a;"></div>
